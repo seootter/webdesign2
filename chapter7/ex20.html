@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>indexOf</title>
+</head>
+<body>
+    <script>
+        let str = "Hello Thank you good luck to you";
+
+        let want = "He";
+        let count = 0;
+
+        for(let nth=0; nth<str.length; nth++) {
+            let isMatch = str[nth] == want[0];
+
+            if(isMatch) {
+                for(let i=0; i<want.length; i++) {
+                    let strIndex = nth + i;
+
+                    if(str[strIndex] != want[i]) {
+                        isMatch = false;
+                        break;
+                    } //end if
+                } // end for i
+            } // end if
+
+            if(isMatch) {
+                break;
+            }
+
+            count++;
+        } // end for nth
+
+        console.log("찾고자 하는 문자열 " + want + "는 " + count + "번 인덱스에 위치해있음");                 
+    </script>
+</body>
+</html>

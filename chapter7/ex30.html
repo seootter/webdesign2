@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math</title>
+</head>
+<body>
+    <script>
+
+        // Math.random(); > 0 ~ 1 사이의 실수 하나를 무작위로 뽑아줌
+        // Math.random() * 10; : 0 ~ 10 사이의 실수 하나를 무작위로 뽑아줌
+        // (Math.random() * 9) + 1; : 1 ~ 10 사이의 실수 하나를 무작위로 뽑아줌
+        // Math.floor(Math.random() * (최댓값 - 최솟값 + 1)) + 최솟값 : 1 ~ 10 사이의 정수를 무작위로 뽑아줌
+
+        // for(let i=1; i<=10; i++) {
+        //     // let randomNumber = (Math.random() * 9) + 1 ;
+        //     // let randomNumber = Math.floor(Math.random() * 10) + 1;
+            
+        //     let randomNumber = Math.ceil(Math.random() * 10);
+
+        //     document.write(randomNumber + "<br>");
+        // }
+
+        // 1 ~ 45 사이의 수를 무작위로 6개를 뽑아 출력
+
+        for(let i=1; i<=6; i++) {
+            let randomNumber = Math.ceil(Math.random() * 45) ;
+
+            document.write(randomNumber + "<br>");
+        }
+
+
+    </script>
+</body>
+</html>

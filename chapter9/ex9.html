@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/dom2.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">에디오피아 게뎁</h1>
+        <div id="prod-img">
+            <img src="images/coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200px" height="200px">
+            <div id="small-pic">
+                <img src="images/coffee-pink.jpg" class="small" onclick="clickSmallImg1()">
+                <img src="images/coffee-blue.jpg" class="small" onclick="clickSmallImg2()">
+                <img src="images/coffee-gray.jpg" class="small" onclick="clickSmallImg3()">
+            </div>
+        </div>
+        <div id="desc">
+            <ul>
+                <li>상품명 : 에디오피아 게뎁</li>
+                <li class="bluetext">판매가 : 9,000원</li>
+                <li>배송비 : 3,000원 <br>(50,000원 이상 구매 시 무료)</li>
+                <li>적립금 : 180(2%)</li>
+                <li>로스팅 : 2019.06.17</li>
+                <button onclick="sizeup()">장바구니 담기</button>
+            </ul>
+            <a href="#" id="view">상세 설명 보기</a>
+        </div>
+    </div>    
+
+    <script>
+            function clickSmallImg1() {
+                let smallImgs = document.querySelectorAll(".small");
+                let smallImg = smallImgs[0];
+
+                let smallImgSrc = smallImg.getAttribute("src");
+
+                let bigImg = document.querySelector("#cup");
+
+                bigImg.setAttribute("src", smallImgSrc);
+            }
+
+            function clickSmallImg2() {
+                let smallImgs = document.querySelectorAll(".small");
+                let smallImg = smallImgs[1];
+
+                let smallImgSrc = smallImg.getAttribute("src");
+
+                let bigImg = document.querySelector("#cup");
+
+                bigImg.setAttribute("src", smallImgSrc);
+            }
+
+            function clickSmallImg3() {
+                let smallImgs = document.querySelectorAll(".small");
+                let smallImg = smallImgs[2];
+
+                let smallImgSrc = smallImg.getAttribute("src");
+
+                let bigImg = document.querySelector("#cup");
+
+                bigImg.setAttribute("src", smallImgSrc);
+            }
+
+        // 장바구니 버튼을 눌렀을 때 큰 이미지의 height 크기를 100 키움
+        // getAttribute() 메서드로 속성의 값을 불러오면 문자열로 불러와짐
+        // 
+        // function sizeup() {
+        //     let cup = document.querySelector("#cup");
+
+        //     let height = cup.getAttribute("height");
+        //     height = parseInt(height) + 100;
+
+        //     cup.setAttribute("height", height);
+        // }
+
+        // let cup = document.querySelector("#cup");
+
+        // let bigSrc = cup.getAttribute("src");
+        // let bigAlt = cup.getAttribute("alt");
+        // let bigid = cup.getAttribute("id");
+        // let bigWidht = cup.getAttribute("widht");
+        // let bigHeight = cup.getAttribute("height");
+
+
+        // let aTag = document.querySelector("#view");
+
+        // getAttribute() : 인자로 속성명을 넣어줌 / 해당 태그에 지정한 속성의 값을 반환
+        // 태그를 불러왔을 때 그 태그의 속성에 접근할 수 있음
+        // let id = aTag.getAttribute("id");
+        // let href = aTag.getAttribute("href");
+
+        // console.log("a 태그의 id = " + id);
+        // console.log("a 태그의 href = " + href);
+    </script>
+</body>
+</html>

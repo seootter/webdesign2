@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let today = new Date();
+        let dayOfWeek = today.getDay();
+        document.write("오늘은 " + dayOfWeek + "요일입니다.<br>");
+
+        today.setFullYear(2022);
+        dayOfWeek = today.getDay();
+        document.write("2022년 오늘은 " + dayOfWeek + "요일입니다.<br>");   
+
+        today.setFullYear(2021);
+        today.setMonth(11);
+        today.setDate(31);
+        dayOfWeek = today.getDay();
+        document.write("2021년 12월 31일은 " + dayOfWeek + "요일입니다.<br>");           
+
+        today.setTime(1609372800000);
+        dayOfWeek = today.getDay();
+        document.write("2020년 12월 31일은 " + dayOfWeek + "요일입니다.");  
+    </script>
+</body>
+</html>

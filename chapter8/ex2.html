@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let num = 2;
+
+        function guGudan2() {
+            // let num = 2;
+            // 함수 안에서 선언한 변수가 아닌 변수를 함수에서 사용하면 프로그램이 복잡해짐
+            // 함수 안에서 사용하는 변수는 함수 안에서 선언한 변수만 사용하도록 해야함
+            for(let i=1; i<=9; i++) {
+                document.write( num + " * " + i + " = " + (num*i) + "<br>");
+            }
+        }
+
+        function plusNum() {
+            num = num + 1;
+            document.write("num = " + num + "<br>");
+        }
+
+        guGudan2();
+
+        plusNum();
+
+        guGudan2();
+    </script>
+</body>
+</html>

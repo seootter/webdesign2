@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/nameList.css">
+</head>
+<body>
+    <div id="container">
+        <h1>참가 신청</h1>
+
+        <div>
+            <input type="text" id="userName" placeholder="이름">
+            <button type="button" onclick="newRegister()">신청</button>
+        </div>
+        <hr>
+
+        <div id="nameList"></div>
+    </div>
+
+    <script>
+        function newRegister() {
+            let nameListTag1 = document.querySelector("#nameList");
+            // hasChildNodes() : 해당 태그에 자식 태그가 들어있는지 확인하는 메서드
+            console.log(nameListTag1.hasChildNodes());
+
+            // 태그를 DOM구조로 그렸을 때 태그 내 attribute노드, text노드 등 자식 노드가 달려있으면
+            // 자식 태그가 들어있다고 인식
+            // let firstNode = nameListTag1[0];
+            // console.log(firstNode.hasChildNodes());
+            // #nameList 태그에 접근한다 (document.querySelector("#nameLst");)
+            // 그 다음 해당 태그의 자식 태그에 접근한다 (document.querySelector("#nameLst").childModes;)
+            let nameList = document.querySelector("#nameList").childNodes;
+
+            let nameList = document.querySelectorAll("#nameList > p");
+            for(let index=0; index < nameList.length; index++) {
+                let nthName = nameList[index];
+
+                console.log(nthName.innerText);
+            }
+
+
+            var userNameTag = document.querySelector("#userName");
+            // userNameTag 변수에 들어있는 값이 input 태그임
+            // input 태그에 입력한 값을 가져오려면 value 멤버 변수에 접근하면 됨
+            var userName = userNameTag.value;
+
+            if(userName == "") {
+                alert("이름을 입력하세요!");
+            } else {
+                // id가 nameList인 div 태그 안에 사용자가 입력한 이름을 갖고 있는 p태그 추가
+                var newP = document.createElement("p");
+
+                var userNameTextNode = document.createTextNode(userName);
+
+                newP.appendChild(userNameTextNode);
+
+                var nameListTag = document.querySelector("#nameList");
+                // appendChild() : 부모 태그가 자식 태그를 추가하는 메서드
+                // 부모태그.appendChild() 로 사용해야함
+                nameListTag.appendChild(newP);
+
+                userNameTag.value = "";
+            }
+        }
+    </script>
+</body>
+</html>

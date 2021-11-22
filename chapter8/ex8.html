@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="func1.js"></script>
+    <script src="func2.js"></script>
+</head>
+<body>
+    <script>
+        // 같은 이름의 함수가 선언되어있을 때는
+        // 마지막에 선언한 함수만 살아남음
+        // html태그는 html파일에, css 코드는 css파일에, javascript 코드는 js파일에 분할하여
+        // 작업을 하다보면 js파일에 같은 이름의 함수를 선언하는 경우가 빈번히 발생함
+        // 함수의 이름이 중복되지 않게 함수의 이름은 의미있는 이름으로
+        // 함수를 호출했을 때 수행하는 동작을 내포하고 있어야함
+
+        function calcAvg(kor, eng, mat) {
+            let total = kor + eng + mat;
+            let avg = total / 3;
+
+            return avg;
+        }
+
+        let score = calcAvg(77, 96, 64);
+
+        document.write("평균점수 = " + score);  
+
+        function sum(num1, num2) {
+            let total = 0;
+            for(let i=num1; i<=num2; i++) {
+                if(i % 2 == 0) {
+                    total = total + i;
+                }
+            }
+            return total;
+        }
+
+        let total = sum(1, 10);
+
+        document.write("total = " + total);        
+
+        function avg(array) {
+            let total = 0;
+
+            for(let i=0; i<array.length; i++) {
+                if(i % 2 == 0) {
+                    total = total + array[i];
+                }
+            }
+            let avg = total / array.length;
+            return avg;
+        }
+
+        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        let result = avg(array);
+        document.write("result = " + result); 
+
+    </script>
+</body>
+</html>

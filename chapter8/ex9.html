@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>익명 함수</title>
+</head>
+<body>
+    <script>
+        // 익명 함수는 값처럼 변수에 저장해서 사용함
+        // '함수가 일급 객체다' 라고 표현함
+        let val = function(param) {
+            param = param + 1;
+
+            return param;
+        }
+
+        let result = val(5);
+        document.write("result = " + result);
+
+        
+    </script>
+</body>
+</html>

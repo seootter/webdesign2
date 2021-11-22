@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/dom2.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">에디오피아 게뎁</h1>
+        <div id="prod-img">
+            <img src="images/coffee-pink.jpg" alt="에디오피아 게뎁" id="cup" width="200px" height="200px">
+            <div id="small-pic">
+                <img src="images/coffee-pink.jpg" class="small" onclick="clickSmallImg(0)">
+                <img src="images/coffee-blue.jpg" class="small" onclick="clickSmallImg(1)">
+                <img src="images/coffee-gray.jpg" class="small" onclick="clickSmallImg(2)">
+            </div>
+        </div>
+        <div id="desc">
+            <ul>
+                <li>상품명 : 에디오피아 게뎁</li>
+                <li class="bluetext">판매가 : 9,000원</li>
+                <li>배송비 : 3,000원 <br>(50,000원 이상 구매 시 무료)</li>
+                <li>적립금 : 180(2%)</li>
+                <li>로스팅 : 2019.06.17</li>
+                <button onclick="sizeup()">장바구니 담기</button>
+            </ul>
+            <a href="#" id="view">상세 설명 보기</a>
+        </div>
+    </div>    
+
+    <script>
+            function clickSmallImg(index) {
+                let smallImgs = document.querySelectorAll(".small");
+                let smallImg = smallImgs[index];
+
+                let smallImgSrc = smallImg.getAttribute("src");
+
+                let bigImg = document.querySelector("#cup");
+
+                bigImg.setAttribute("src", smallImgSrc);
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        table, td {
+            border : 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let targetDate = prompt("달력을 보고 싶은 연도와 월을 입력하세요.\n입력 방법 : 2021년 1월 → 2021,01");
+        
+        targetDate = targetDate.split(",");
+        targetDate[0] = parseInt(targetDate[0]);
+        targetDate[1] = parseInt(targetDate[1]);
+        
+        let lastDayList = [0, 31, 28, 31, 30 ,31, 30, 31, 31, 30, 31, 30, 31]
+        let lastDay = lastDayList[targetDate[1]];
+
+        document.write("<table>");
+        document.write("<thead>");  
+        document.write("<th>일</th>");
+        document.write("<th>월</th>");   
+        document.write("<th>화</th>");   
+        document.write("<th>수</th>");   
+        document.write("<th>목</th>");   
+        document.write("<th>금</th>");   
+        document.write("<th>토</th>");   
+        document.write("</thead>");          
+        document.write("<tbody");
+
+        for(let day=1; day<=lastDay; day++) {
+            if(day % 7 == 1) {
+                document.write("<tr>");
+            }
+
+            document.write("<td>" + day + "</td>");
+
+            if(day % 7 == 0) {
+                document.write("</tr>");
+            }
+        } 
+
+        document.write("</tbody");
+        document.write("</table>");  
+    </script>
+</body>
+</html>

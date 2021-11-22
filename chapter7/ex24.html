@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체</title>
+</head>
+<body>
+    <script>
+
+        let birth = new Date(1997, 12, 26);
+        let birthDay = birth.getDay();
+
+        let week = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+
+        document.write(week[birthDay]);  
+
+
+        // if(birthDay == 0) document.write("<p>일요일</p>");    
+        // else if (birthDay == 1) document.write("<p>월요일</p>");    
+        // else if (birthDay == 2) document.write("<p>화요일</p>");    
+        // else if (birthDay == 3) document.write("<p>수요일</p>");    
+        // else if (birthDay == 4) document.write("<p>목요일</p>");    
+        // else if (birthDay == 5) document.write("<p>금요일</p>");    
+        // else if (birthDay == 6) document.write("<p>토요일</p>");
+
+
+
+
+
+
+
+        /*
+        let today = new Date();
+        let nowMonth = today.getMonth();   // getMonth 메서드로 '월'을 가져오면 -1이 된 월이 가져와짐
+        let nowDate = today.getDate();    // getDate() > '일'을 가져오는 메서드
+        let nowDay = today.getDay();      // getDay() > '요일'을 가져오는 메서드 (0 : 일요일 ~ 6 : 토요일)
+
+        document.write("<h1>오늘 날짜 정보</h1>");
+        document.write("<p>현재 월 : " + nowMonth + "</p>");
+        document.write("<p>현재 일 : " + nowDate + "</p>");
+        document.write("<p>현재 요일 : " + nowDay + "</p>");
+
+        let olympics = new Date(2021, 6, 23);
+        let olympicsMonth = olympics.getMonth() + 1;
+        let olympicsDate = olympics.getDate();
+        let olympicsDay = olympics.getDay();
+
+        document.write("<h1>올림픽 날짜 정보</h1>");
+        document.write("<p>올림픽 월 : " + olympicsMonth + "</p>");
+        document.write("<p>올림픽 일 : " + olympicsDate + "</p>");
+        document.write("<p>올림픽 요일 : " + olympicsDay + "</p>");
+        */
+
+
+        /*
+        // 객체는 기본적으로 new 연산자를 사용해서 만듬
+        // 그러나 문자열과 배열은 너무 많이 사용하니까
+        // // 특별하게 new 연산자를 사용하지 않아도 배열, 문자열을 만들 수 있도록 해준 것
+        // let arr = new Array();
+        // let str = new String();
+        // let arr = [];
+        // let str = "";
+
+        // Date 객체를 만들 때 여닫는 소괄호 안에 아무것도 안 넣으면
+        // 현재 날짜 정보를 갖고 있는 date 객체가 생성됨
+        let date = new Date();
+        let date2 = new Date(2021, 0, 1);
+
+        console.log(date);
+        console.log(date.toLocaleDateString());
+
+        console.log(date2);
+        console.log(date2.toLocaleDateString());
+        */
+    </script>
+</body>
+</html>

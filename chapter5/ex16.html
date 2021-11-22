@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let site = prompt("이동 하려는 사이트는?\n(구글, 네이버, 다음 중 하나 입력)");
+        let url = "";
+
+        switch(site) {
+            case "구글":
+            case "google":
+            url = "www.google.com";
+                break;
+            case "네이버":
+            case "naver":
+            url = "www.naver.com";
+                break;
+            case "다음":    
+            case "daum":
+            url = "www.daum.net";
+                break;
+            default:
+            // else처럼 switch에 들어온 값과 case에 있는 값이 모두 일치하지 않았을 때
+            // 실행될 코드
+                alert("구글, 네이버, 다음 중 하나를 입력하세요.");
+                location.reload();
+                break;
+            }
+        
+        document.write("<a href=\"http://" + url + "\">" + site + "으(로) 이동</a>");
+    </script>        
+    </script>
+</body>
+</html>

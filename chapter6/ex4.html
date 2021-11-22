@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+
+        // % 연산자를 활용하면 어떤 수가 홀수인지, 짝수인지 알 수 있음
+
+        let num = 1;
+        let sum = 0;
+
+        while(num <= 10) {
+            // 2로 나눈 나머지가 1이라면 홀수
+            if(num % 2 == 1) {
+                sum = sum + num;
+            }
+
+            num = num + 2;
+        }
+
+        document.write("1~10 사이의 수 중 홀수의 합 = " + sum + "<br>");
+    </script>
+</body>
+</html>

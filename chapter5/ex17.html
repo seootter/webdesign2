@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 범위</title>
+    <script src="scope.js"></script>
+    <script src="scope2.js"></script>
+</head>
+<body>
+    <script>
+        // 변수는 선언한 이후부터 그 밑으로 전부 영향을 미치기 때문에
+        // 자바스크립트 코드를 짤 때 변수 이름을 중복되지 않게 규칙을 만들어서 지어야함
+        // 그렇지 않으면 자바스크립트 파일을 추가하다 변수 이름이 중복되는 사소하지만 심각한 문제가 발생
+        // 자바스크립트 파일을 만들 때 연관된 코드를 그 안에 전부 집어넣는게 좋음
+        
+        let val = 10;
+        alert("val = " + val);
+    </script>
+
+    <h1>변수의 범위</h1>
+    <p>페이지 내 선언된 변수는 </p>
+    <p>페이지 내 어디서든 접근할 수 있음</p>
+
+    <script>
+        alert("val = " + val);
+    </script>
+</body>
+</html>

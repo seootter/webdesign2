@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <style>
+        table, td {
+            border : 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let targetDate = prompt("달력을 보고 싶은 연도와 월을 입력하세요.\n입력 방법 : 2021년 1월 → 2021,01");
+        
+        // 사용자가 입력한 날짜를 ,를 기준으로 쪼갬
+        targetDate = targetDate.split(",");
+        // 사용자가 입력한 연도를 숫자로 바꿈
+        targetDate[0] = parseInt(targetDate[0]);
+        // 사용자가 입력한 월을 숫자로 바꿈
+        targetDate[1] = parseInt(targetDate[1]);
+        
+        // 첫 번째 데이터는 의미 없는 데이터 0을 저장
+        // 두 번째 데이터부터가 의미있는 데이터 (1월의 말 일)
+        // 세 번째 데이터는 2월의 말 일
+        // ...
+        // 마지막 데이터는 12월의 말 일
+        let lastDayList = [0, 31, 28, 31, 30 ,31, 30, 31, 31, 30, 31, 30, 31]
+        // 사용자가 입력한 월의 말 일
+        let lastDay = lastDayList[targetDate[1]];
+
+        document.write("<table>");
+        document.write("<tbody");
+
+        for(let day=1; day<=lastDay; day++) {
+            if(day % 7 == 1) {
+                document.write("<tr>");
+            }
+
+            document.write("<td>" + day + "</td>");
+
+            if(day % 7 == 0) {
+                document.write("</tr>");
+            }
+        } 
+
+        document.write("</tbody");
+        document.write("</table>");
+
+        /*
+        // 사용자가 입력한 연도, 월에서 다음 달의 날짜 정보를 생성
+        // (이유 > 사용자가 입력한 연도, 월의 말 일을 계산하기 위해)
+        let calendar = new Date(targetDate[0], targetDate[1], 1);
+
+        // <사용자가 지정한 월의 말일을 계산하는 부분>
+        // 사용자가 지정한 연도, 월의 말 일의 타임 스탬프 계산
+        let targetTime = calendar.getTime() - 8640000;
+        // 사용자가 지정한 연도, 월의 말 일의 정보를 갖고 있도록 날짜 정보 수정
+        calendar.setTime(targetTime);
+
+        console.log("사용자가 입력한 월의 마지막 날 = " + calendar.toLocaleDateString());
+        */
+
+
+
+    </script>
+</body>
+</html>

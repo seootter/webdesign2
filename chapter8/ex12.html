@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        // 전역 변수 : 코드 블록에 들어있지 않은 변수
+        //  - 선언된 이후부터 자바스크립트 전반에 걸쳐서 영향을 미침
+        let globalValue = "전역 변수"
+
+        // 지역 변수 : 코드 블록에 들어있는 변수
+        //  - 해당 코드 블록 안에서만 영향을 미침
+    </script>
+
+    <p>전역 변수는 코드 블록 {} 이 아닌 위치에 선언한 변수를 의미</p>
+    <p>전역 변수는 전역 이라는 말 처럼 전역에서 접근할 수 있는 변수</p>
+    <p>전역 변수는 선언한 이후에도 전부 영향을 미침</p>
+
+    <script>
+        // 전역 변수는 프로그램을 거미줄처럼 꼬으는 단점을 갖고 잇음
+        // 전역 변수는 웬만하면 사용하지 않는게 좋음
+        console.log(globalValue);
+    </script>    
+</body>
+</html>

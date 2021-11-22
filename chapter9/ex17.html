@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <link rel="stylesheet" href="css/nameList.css">
+</head>
+<body>
+    <div id="container">
+        <h1>참가 신청</h1>
+
+        <div>
+            <input type="text" id="userName" placeholder="이름">
+            <button type="button" onclick="newRegister()">신청</button>
+        </div>
+        <hr>
+
+        <div id="nameList"></div>
+    </div>
+
+    <script>
+        function newRegister() {
+            var userNameTag = document.querySelector("#userName");
+            var userName = userNameTag.value;
+
+            if(userName == "") {
+                alert("이름을 입력하세요!");
+            } else {
+                var up = document.createElement("span");
+                var down = document.createElement("span");
+
+                var upText = document.createTextNode("🔺");
+                var downText = document.createTextNode("🔻");
+
+                up.setAttribute("class", "btn");
+                down.setAttribute("class", "btn");
+                // setAttribute() : 속성을 만드는 메서드
+                // 태그에 속성을 쉽게 추가할 수 있는 메서드
+                // 태그를 자바스크립트로 추가할 때 태그의 이벤트 처리기를 다음과 같이 쉽게 등록할 수 잇음
+                // onclick 등과 같은 이벤트 처리기도 결국에는 속성임
+                // up.setAttribute("onclick", "clickUp(this)");
+                // down.setAttribute("onclick", "clickDown(this)");
+
+                // addEventListener() : 특정한 태그에 이벤트 처리기를 등록할 수 있는 메서드
+                // 위에서 사용한 방식은 권장하지 않음
+                up.addEventListener("click", function() {
+                    clickUp(this);
+                });
+
+                down.addEventListener("click", function() {
+                    clickUp(this);
+                });
+
+                up.appendChild(upText);
+                down.appendChild(downText);
+
+                var newP = document.createElement("p");
+
+                var userNameTextNode = document.createTextNode(userName);
+
+                newP.appendChild(userNameTextNode);
+                newP.appendChild(up);
+                newP.appendChild(down);
+
+                var nameListTag = document.querySelector("#nameList");
+
+                nameListTag.appendChild(newP);
+
+                userNameTag.value = "";
+            }
+        }
+
+        // 위로 화살표를 눌렀을 때 동작하는 함수
+        function clickUp(element) {
+            // element 매개변수로 현재 클릭한 span 태그가 전달되니 이를 활용해서
+            // 현재 클릭한 태그의 부모 노드로 올라가면 p태그가 됨
+            // parentNode : 현재 태그의 부모 태그로 접근할 수 있는 멤버 변수
+
+            // span 태그의 위치를 바꾸려는것이 아닌 이름과 두 span 태그를 포함하고 있는 p태그의 순서를 바꾸련느 것
+            // element 매개 변수가 span 태그를 갖고 있으니 span태그의 부모 노드에 접근하면 p 태그가 되고
+            // 그 p태그를 pNode 변수에 저장
+            let pNode = element.parentNoode;
+
+            // 태그들의 순서를 바꾸려면 insrtBefore 메서드를 사용
+            // 이미 존재하는 태그를 insertBefore의 추가 대상(첫 번째 인자)로 지정하면 태그 순서가 바뀜
+
+            // p.Node.parentNode; :
+            // 이동하려는 현재 태그보다 앞에 있는 태그를 찾기 위해 이동하려는 현재 태그의 부모 태그로 올라감
+            let nameListNode = pNode.parentNoode;
+            // nameListNode.children : #nameList 태그의 자식 태그들에 접근
+            let nameNodeList = nameListNode.children;
+        }
+
+         // 아래로 화살표를 눌렀을 때 동작하는 함수
+        function clickDown(element) {
+            alert("아래로 화살표를 눌렀음");
+            console.log(element);
+        }
+    </script>
+</body>
+</html>

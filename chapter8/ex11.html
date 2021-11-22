@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+    <style>
+        div {
+            margin-top: 10px;
+        }
+
+        div.bg {
+            background: burlywood;
+            width: 300px;
+            height: 300px;
+        }
+
+        div.events {
+            background: slategray;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="clickBtn()">여기를 클릭하세요.</button>
+    <div class="bg" onmouseover="onDiv()"></div>
+    <div class="events" onclick="onClick()" onmouseout="outDiv()">
+        하나의 태그에 여러 이벤트 처리기를 등록할 수 있음
+    </div>
+    <div>여기에 있는 문장에서 [ <span ondblclick="doubleClick(this)">이 부분</span> ] 을 더블클릭하면 색이 바뀝니다.</div>
+    <div>
+        <p>이벤트 처리기에 evnet 인자를 넣어 현재 발생한 이벤트 정보를 얻을 수 있음</p>
+        <input type="text" onkeypress="inputKey(event)">
+    </div>
+    <script>
+        function inputKey(event) {
+            console.log("<< 현재 발생한 이벤트 정보 >>");
+            console.log(event);
+
+            console.log("사용자가 키보드로 누른 키는 [ " + event.Key + " ] 입니다.");
+            console.log("= = = = = =");
+        }
+
+        function doubleClick(element) {
+            // 검정색 글씨를 빨간색으로 또는 빨간색 글씨를 검정색으로 바꾸는 함수
+
+            // element > 이벤트가 발생한 태그
+            // element.style > 이벤트가 발생한 태그의 css에 접근
+            // element.style.color > 이벤트가 발생한 태그의 css 속성 중 color 속성에 접근
+            // 설정하지 않은 css 속성에 접근하고 있으므로 fontColor 변수에는 빈 문자열이 저장됨
+            let fontColor = element.style.color;
+
+            if(fontColor == "black" || fontColor == "") {
+                // 이벤트가 발생한 태그의 color 속성의 값을 red로 설정
+                element.style.color = "red";
+            } else {
+                element.style.color = "black";                
+            }
+        }
+
+        function clickBtn() {
+            alert("클릭!");
+        }
+
+        function onDiv() {
+            alert("마우스 올림");
+        }
+
+        function onClick() {
+            // 이 함수가 호출되면 p태그가 계속 추가됨
+            let events = document.querySelector(".events");
+            
+            let innerHTML = events.innerHTML + "<p>클릭</p>"
+
+            events.innerHTML = innerHTML;
+        }
+
+        function outDiv() {
+            // 이 함수가 호출되면 p태그가 사라짐
+            let events = document.querySelector(".events");  
+            
+            events.innerHTML = "하나의 태그에 여러 이벤트 처리기를 등록할 수 있음";
+        }
+    </script>
+</body>
+</html>

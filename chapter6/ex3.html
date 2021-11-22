@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+
+        // 반복적으로 무언가를 할 때는 반복문으로 해결할 수 있음
+        // 반복적으로 코드를 입력하면 잘못개발하고 있다고 느껴야함
+        // 반복되는 코드는 무조건 반복문으로 해결해야함
+        // 반복되는 코드를 방치하면 틀린코드임
+        // 우리가 아직 반복문에 익숙치 않으니 잘못 개발하고 있음을 느끼기만 하고
+        // 문제를 해결한 뒤에 반복문으로 바꿔야함
+
+        // 반복되는 코드가 있을 때 반복문으로 바꾸는 방법
+        // 1. 반복되는 코드에서 변하지 않는 부분을 찾는다
+        // 2. 반복되는 코드에서 변하는 부분을 찾는다
+        // 당연하게도 변하지 않는 부분은 반복문 안에 그대로 써주면 됨
+        // 변하는 부분을 찾았으면 변하는 부분은 어떻게 싲가해서 어떻게 끝나는지,
+        // 변하는 부분의 패턴이 있는지를 다시 찾아야함 
+        // 변하는 부분에 패턴이 있으면 그 반복되는 코드는 반복문으로 해결 가능
+        // 변하는 부분에 패턴이 없으면 반복문으로 해결 불가능 / 그대로 둬야함
+
+        // let sum = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10;
+
+        //     ▽
+
+        // let sum = 1;
+        // sum = sum + 2;
+        // sum = sum + 3;
+        // sum = sum + 4;
+        // sum = sum + 5;
+        // sum = sum + 6;
+        // sum = sum + 7;
+        // sum = sum + 8;
+        // sum = sum + 9;
+        // sum = sum + 10;
+
+        //      ▽
+
+        let num = 2;
+        let sum = 1;
+
+        while(num <= 10) {
+            sum = sum + num;
+            num++;
+        }
+
+        document.write("1~10까지 합 = " + sum + "<br>");
+
+    </script>
+</body>
+</html>

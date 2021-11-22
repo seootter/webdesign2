@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역변수의 범위2</title>
+</head>
+<body>
+    <script>
+        // let num = 3;
+
+        // for(let val=0; val<3; val++) {
+        //     let count = 0;
+
+        //     num--;
+        //     val++;
+        //     count++;
+        // }
+
+        // console.log("num = " + num);
+        // console.log("count = " + count);        
+
+        function func(val) {
+            let num = 1;
+
+            console.log("num = " + num);
+        }
+
+        let num = 0;
+
+        func(num);
+
+        console.log("num = " + num);        
+    </script>
+</body>
+</html>

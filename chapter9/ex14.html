@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        // // createElement() : 태그 노드를 생성
+        // var tagNode = document.createElement("p");
+
+        // var textNode = document.createTextNode("주문이 완료되었습니다");
+
+        // var attrNode = document.createAttribute("class");
+        // // attrNode 변수에는 class 속성 노드가 들어있음
+        // // 속성 노드의 value 멤버 변수에 접근하면 속성 노드의 값이 설정됨
+        // attrNode.value = "accent";
+
+        // // tagNode 변수에는 p 태그 노드가 들어있으므로
+        // // tagNode.appendChild 메서드를 사용하면 p태그 노드에 자식 태그 노드를 달거나
+        // // text 노드를 추가할 수 있음
+        // tagNode.appendChild(textNode);
+        // // tagNode.setAttributeNode 메서드를 사용하면 p태그 노드에 속성 노드를 추가할 수 있음
+        // tagNode.setAttributeNode(attrNode);
+
+        // // document.body : body 태그 노드에 접근할 수 있음
+        // let body = document.body;
+
+        // body.appendChild(tagNode);
+
+
+        var tagNode = document.createElement("h2");
+
+        var textNode = document.createTextNode("주문 완료");
+
+        var attrNode = document.createAttribute("id");
+        attrNode.value = "notice"
+
+        tagNode.appendChild(textNode);
+        tagNode.setAttributeNode(attrNode);
+
+        document.body.appendChild(tagNode);
+    </script>
+</body>
+</html>

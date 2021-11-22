@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        // let arr1 = [1, 2, 3];
+        // console.log("arr1 = " + arr1);
+
+        // // push(인자) > 인자로 값을 넣어야함
+        // //              인자로 넣은 값을 대상 배열에 맨 마지막에 추가
+        // //              대상 배열에 변화가 생김
+
+        // arr1.push(4);
+        // console.log("arr1에 4를 push = " + arr1);
+
+        // // unshift(인자) > 인자로 값을 넣어야함
+        // //                 인자로 넣은 값을 대상 배열에 맨 앞에 새롭게 추가
+        // //                 대상 배열에 변화가 생김
+
+        // arr1.unshift(0);
+        // console.log("arr1에 0 unshift = " + arr1);
+
+        let arr1 = [1, 2, 3];
+        console.log("arr1 = " + arr1);
+
+        arr1[arr1.length] = 4;
+        console.log("arr1에 4를 push = " + arr1);
+
+        for(let i=arr1.length; i>=1; i--) {
+            arr1[i] = arr1[i-1];
+        }
+        arr1[0] = 0;
+
+        console.log("arr1에 0 unshift = " + arr1);
+    </script>
+</body>
+</html>

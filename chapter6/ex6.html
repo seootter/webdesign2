@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let score = prompt("국어 점수");
+
+        // 국어 점수를 정확히 입력하지 않았을 동안 반복적으로 동작함
+        // 조건식 자리에 논리 연산자, 비교 연산자를 사용하지만
+        // while의 조건식 자리는 코드를 암호처럼 꼬으는 경향이 있음
+        while(true) {
+            if(score >= 0 && score <= 100) {
+                break; // break를 감싸고 있는 반복문 하나를 빠져나간다.
+            } else {
+                alert("국어 점수는 0 ~ 100점 사이입니다!\n다시 입력하세요");
+
+                score = prompt("국어 점수");
+            }
+        }
+
+        if(score >= 60) {
+            document.write("통과");
+        }else {
+            document.write("재시험");
+        }
+    </script>
+</body>
+</html>

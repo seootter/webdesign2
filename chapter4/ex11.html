@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let kor = prompt("국어 점수를 입력하세요");
+
+        document.write("<p>사용자가 입력한 국어 점수 = " + kor + "</p>");
+
+        // 0 이상의 값을 입력했을 때는 결과가 ture
+        document.write("<p>" + (kor >= 0) + "</p>");
+
+        // 100 이하의 값을 입력했을 때는 결과가 ture
+        document.write("<p>" + (kor <= 100) + "</p>");
+
+        // 우리가 국어점수는 0 ~100점 사이의 값이라고 정했음
+        // document 에 적은 비교 연산의 결과를 보면
+        // 사용자가 입력한 국어점수가 0~00점 사이일 때는 모두 ture 임
+        // 사용자가 입력한 국어점수가 0~100점 사이가 아닐 땐 두 연산 중 하나가 false가 됨
+        // ex)-1, 101, ...
+
+        //kor 이 0 이상인가요? 그리고 kor이 100 이하인가요?
+        // > kor 이 0 이상이고 100이하의 수인가요?
+        let result = (kor >= 0) && (kor <= 100);
+        document.write("<p>" + result + "</p>");
+
+        // && 연산자의 이름이 and 연산자인 것처럼 문제에서 또는 회의를 통해서 얘기한 문장 중
+        // 그리고, 이고 라는 말이 있으면 && 연산을 사용하면 됨
+
+
+        // 국어 점수를 55, -1, 101 차례대로 입력하면서 아래 코드의 동작 원리를 파악
+        // kor 이 0 미만인가요? kor이 100보다 큰가요?
+        // kor이 0 보다 작거나 100 보다 큰가요?
+        let result = (kor < 0) || (kor > 100);
+        document.write("<p>" + result + "</p>");  
+
+        // ||연산자의 이름이 or 연산자인 것처럼 문제에서 또는 회의를 통해서 얘기한 문장 중
+        // 이거나, 또는 이라는 말이 있으면 그 자리는 || 연산을 사용하면 됨
+
+    </script>
+
+</body>
+</html>

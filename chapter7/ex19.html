@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열_charAt, indexOf</title>
+</head>
+<body>
+    <script>
+        let str = "Hello Thank you good luck to you";
+
+        let want = "od";
+
+        let count = 0;
+        // str의 처음부터 끝까지 하나씩 순회하는 반복문
+        for(let nth=0; nth<str.length; nth++) {
+            // str의 n번 인덱스 문자와 wnat의 0번 인덱스 문자가 같은지 여부를 저장하는 변수
+            // true > 두 문자열이 일치한다 / false > 두 문자열이 일치하지 않는다
+            let isMatch = str[nth] == want[0];       
+            // str의 nth번 인덱스의 문자와 want의 0번 인덱스 문자가 같다면
+            if(isMatch) {
+                // if문 안으로 들어오면 isMatch 변수의 역할이 바뀜
+                // > if문 안으로 들어왔을 때 isMatch 변수 역할 <
+                // str의 nth번을 포함한 이후의 문자열과
+                // want의 문자열이 일치하는지 여부를 저장하는 변수
+
+                for(let i=0; i<want.length; i++) {
+                    let strIndex = nth + i;
+                    if(str[strIndex] != want[i]) {
+                        isMatch = false;
+                        break;
+                    } //end if
+                } // end for i
+            } // end if
+            if(isMatch) {
+                break;
+            }
+
+            count++;
+        } // end for nth
+
+        // let index = str.indexOf("od");
+        console.log("찾고자 하는 문자열 " + want + "는 " + count + "번 인덱스에 위치해있음");
+
+        // let index = 0; 
+
+        // for(let i=0; i<str.length; i++) {
+        //     if(str[i] != "y") {
+        //         index++;
+        //     } else {
+        //         break;
+        //     }
+        //     if(index == str.length) {
+        //         index = -1;
+        //     }
+
+        // }
+
+        // console.log("y의 인덱스 번호 = " + index);
+
+        // chatAr(인자) > 인자가 하나 필요한 메서드
+        //                대상 문자열에서 (인자)번 인덱스에 있는 문자 하나를 알려주는 메서드
+        //                그 자리에 있는 문자가 charAt 자리를 대신함
+        // let ch = str.charAt(16);
+        // let ch = str[16];
+
+        // console.log("17번 째 있는 문자 =" + ch);
+        // // let str1 = "Hello JavaScript!";
+        // let str1 = new String("Hello JavaScript!");
+
+        // let str2 = "안녕!";
+        // let str3 = " ";
+        // //str4 : 빈문자열 이라고 부름
+        // let str4 = "";
+    </script>
+</body>
+</html>

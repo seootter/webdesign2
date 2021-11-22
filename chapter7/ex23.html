@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>concat, trim</title>
+</head>
+<body>
+    <script>
+        /*
+        let str1 = "apple";
+        let str2 = "tree";
+
+        // concat() > 인자가 하나 필요함 
+        //            대상 문자열 뒤에 인자로 넣은 문자열이 합쳐진 새로운 문자열을 생성
+        //            새로운 문자열이 concat이 있던 자리를 대신함
+        //let str = str1.concat(str2);
+
+        let str = str1 + str2;
+
+        console.log("str1 = " + str1);
+        console.log("str2 = " + str2);
+        console.log("str = " + str);
+        */
+
+        let str = "  Hello    ";
+
+        // trim() > 인자가 필요 없는 메서드
+        //          대상 문자열의 앞, 뒤에 있는 공백 문자를 제거한 새로운 문자열을 생성
+        // let newStr = str.trim();
+
+        let newStr = "";
+
+        for(let i=0; i<str.length; i++) {
+            if(str[i] != " ") {
+                newStr = newStr + str[i];
+            }
+        }
+
+        console.log("str = " + str);
+        console.log("newStr = " + newStr);       
+
+    </script>
+</body>
+</html>

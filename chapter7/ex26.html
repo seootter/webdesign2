@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+
+</head>
+<body>
+    <script>
+        // 1. 사용자로부터 날짜를 입력 받는다
+        let inputDate = prompt("날짜 입력\n예) 2021년 1월 21일 → 2021,01,21");
+
+        inputDate = inputDate.split(",");
+        inputDate[0] = parseInt(inputDate[0]);
+        inputDate[1] = parseInt(inputDate[1]);
+        inputDate[2] = parseInt(inputDate[2]);        
+
+        // 2. 입력한 날짜에 맞는 D-day를 계산한다.
+        let today = new Date();
+        let day = new Date(inputDate[0], inputDate[1]-1, inputDate[2]);
+
+        let todayTime = today.getTime();
+        let dayTime = day.getTime();
+
+        let diffTime = dayTime - todayTime;
+
+        diffTime = diffTime / 1000;
+        let diffDay = diffTime / 86400;       
+        diffDay = Math.ceil(diffDay);
+
+        // 3. D-day가 음수면 빨간색, 양수면 파란색으로 남은 일 수 출력
+        if(diffDay > 0) {
+            document.write("<p style =\"font-size : 32px; color : blue;\">" + diffDay + "일 남았습니다.</p>");
+        } else if(diffDay < 0) {
+            document.write("<p style =\"font-size : 32px; color : red;\">" + diffDay + "일 지났습니다.</p>");            
+        } else if(diffDay == 0) {
+            document.write("D-day입니다."); 
+        }
+    </script>
+</body>
+</html>

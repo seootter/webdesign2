@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM</title>
+</head>
+<body>
+    <script>
+        // setInterval() : 소스 코드를 주기적으로 실행시키도록 등록하는 메서드
+        setInterval(function() {
+            // console.log("실행");
+            window.open("http://www.naver.com", "popup", "width=350,height=400");
+        }, 5000);
+
+        // open() : 새 창(팝업창)을 띄우는 메서드
+        // 총 3개의 인자가 필요
+        // 첫 번째 인자 : 새 창의 URL
+        // 두 번째 인자 : 새 창의 이름
+        // 세 번째 인자 : 새 창의 설정
+        // ( - width : 새 창의 너비 / - hieght : 새 창의 높이 ...)
+        // 팝업 차단이 되어있으면 새 창이 뜨지 않음
+        // 새 창을 띄울려면 팝업 차단을 해제해야함
+       //  window.open("http://www.naver.com", "popup", "width=350,height=400");
+
+        // alert, prompt, confirm 모두 window 브라우저 객체가 갖고 있는 메서드임
+        // 하지만 너무 자주 사용하니까 자바스크립트가 특혜를 준 메서드
+        //
+
+        alert("경고창");
+        window.alert("경고창");
+
+        prompt("입력 안내 문구");
+        window.prompt("입력 안내 문구");
+
+        confirm("질문");
+        window.confirm("질문"); 
+    </script>
+</body>
+</html>

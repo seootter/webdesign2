@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insert page title</title>
+</head>
+<body>
+    <script>
+        let num1 = prompt("첫 번째 수 입력");
+        let num2 = prompt("두 번째 수 입력");
+
+        // 식 자리에 비교 연산자가 와서 비교 연산의 결과가 true면 결과 1 선택(num1)
+        // 비교 연산의 결과가 false면 결과2 선택(num2)
+        // 사용자가 입력한 두 수 중 큰 수를 출력하는 프로그램
+        let maximum = num1 > num2 ? num1 : num2;
+        document.write("두 수 중 큰 수는 " + maximum + " 입니다");
+    </script>
+</body>
+</html>

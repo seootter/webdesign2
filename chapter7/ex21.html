@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>replace</title>
+</head>
+<body>
+    <script>
+        let str = "Hello Thank you good luck to you";
+
+        // replace(인자1, 인자2) > 인자가 2개 필요함
+        //                        대상 문자열 내 (인자1)문자열을 (인자2)문자열로 바꿔줌
+        //                        대상 문자열을 수정하는게 아닌 바뀐 새로운 문자열이 그 자리를 대체함
+        // 프로그래밍은 항상 대소문자를 엄격히 구분하므로 인자1을 넣을 때 대소문자를 잘 확인해야함
+        // let newStr = str.replace("Thank", "abc");
+
+        let param1 = "Thank";
+        let param2 = "apple";
+
+        let newStr = "";
+        for(let i=0; i<str.length; i++) {
+            let isMatch = str[i] == param1[0];
+
+            if(isMatch) {
+                let isFullMatch = str.indexOf(param) != -1;
+                // // indexOf 메서드의 역항를 하는 코드
+                // let isFullMatch = true;
+
+                // for(let j=0; j<param1.length; j++) {
+                //     let strIndex = i + j;
+
+                //     if(str[strIndex] != param1[j]) {
+                //         isFullMatch = false;
+                //         break;
+                //     } // end if
+                // } // end for j
+                // // indexOf 메서드의 역항를 하는 코드
+
+
+                if(isFullMatch) {
+                    // param1 변수에 들어있는 문자열을 대상 문자열에서 찾았다면
+
+                    // 대상 문자열 내 param1 변수에 들어있는 문자열과 일치하는 문자열을
+                    // param2 문자열로 바꿔주는 코드
+                    i = i + param2.length;
+                    for(let j=0; j<param2.length; j++) {
+                        newStr = newStr + param2[j];
+                    }
+
+                    let jump = param1.length - param2.length;
+                    i = i + jump - 1;
+                } else {
+                    newStr = newStr + str[i];
+                } // end if
+            } else {
+                newStr = newStr + str[i];
+            } // end if
+        } // end for i
+
+        console.log("str = " + str);
+        console.log("newStr = " + newStr);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    <script>
+        // 매개변수 : 이 함수가 동작하기 위해서 필요한 재료
+        // 매개변수를 활용하면 함수를 더 다양하게 활용 가능
+        // 매개변수는 함수를 선언할 때 함수명 옆에 필요한만큼 적어둠
+        // 매개변수를 적어두면 함수를 호출 할 때 반드시 매개변수의 개수에 맞춰서 재료를 전달해야함
+        function showMyInfo(name, age, tel) {
+            document.write("<p>이름 : " + name + "</p>");
+            document.write("<p>나이 : " + age + "</p>");
+            document.write("<p>연락처 : " + tel + "</p>");
+        }
+
+        showMyInfo("김철수", 23, "010-1234-5678");
+        showMyInfo("고영희", 27, "010-5678-1234");
+        showMyInfo("홍길동", 21, "010-2345-6789");
+
+        // showMyInfo 함수 선언에 3개의 매개변수가 있으므로
+        // 함수를 호출할 때는 꼭 매개변수의 개수에 맞춰서 값을 전달해줘야함
+        // 함수를 호출할 때 넣는 값 > '인자' 라고 부름
+
+        // 제어가 함수가 정의되어있는 부분으로 올라갈 때 인자를 복사해서
+        // 복사가 된 값을 가지고 올라감
+
+        // 복사가 된 첫 번째 인자는 첫 번째 매개변수에 저장
+        // 복사가 된 두 번째 인자는 두 번째 매개변수에 저장 ...
+    </script>
+</body>
+</html>

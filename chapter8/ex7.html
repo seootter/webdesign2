@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>return</title>
+</head>
+<body>
+    <script>
+        // return : 함수의 끝을 나타냄
+        // return을 만나면 그 즉시 제어가 제자리로 돌아감
+        // 그냥 돌아가지 않고 return의 오른쪽에 있는 값을 가지고 돌아감
+
+        // 함수 안에 return을 사용하면 함수가 계산한 결과를 호출한 곳에서 전달 받을 수 있음
+        // return이 있는 함수는 함수가 만들어낸 결괏값을 가지고 호출한 곳을 되돌아오므로
+        // >> 반환값이 있는 함수 / 결괏값이 있는 함수 / 반환하는 함수 등 다양하게 부름
+        function plus(param) {
+            param = param + 1;
+
+            return param;
+        }
+
+        let num = 5;
+
+        let result = plus(num);
+
+        document.write("result = " + result);
+
+        // plus 함수에 return이 있어 제어가 제자리로 돌아왔을 때 이 자리는 가지고 온 값으로 대체됨
+        // > plus 함수에는 6이라는 값이 대체된 것
+    </script>
+</body>
+</html>

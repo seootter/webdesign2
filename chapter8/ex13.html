@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역변수의 범위1</title>
+</head>
+<body>
+    <script>
+
+        if(true) {
+            let val = 5;
+        }
+
+        console.log(val);
+
+
+        let num = 3;
+
+        switch(num) {
+            case 1:
+                num1 = 1;
+                break;
+            case 2:
+                num1 = 2;
+                break;
+            case 3:
+                num1 = 3;
+                break;
+        }
+
+
+        let num = 3;
+
+        while(num > 0) {
+            let val = 0;
+
+            num--;
+            val++;
+        }
+
+        console.log("num = " + num);
+        console.log("val = " + val);
+
+    </script>
+</body>
+</html>
